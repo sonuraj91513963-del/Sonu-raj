@@ -21,12 +21,24 @@ public class MainForm : Form
         };
 
         Controls.Add(button);
-    }
 
-    [STAThread]
-    public static void Main()
-    {
-        Application.EnableVisualStyles();
-        Application.Run(new MainForm());
-    }
+Button nextButton = new Button();
+nextButton.Text = "NEXT";
+nextButton.Size = new Size(150, 50);
+nextButton.Location = new Point(120, 160);
+
+nextButton.Click += (sender, e) =>
+{
+    MessageBox.Show("Next button clicked!");
+};
+
+Controls.Add(nextButton);
+}
+
+// Main method
+[STAThread]
+public static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.Run(new MainForm());
 }
